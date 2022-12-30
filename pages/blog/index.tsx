@@ -3,10 +3,9 @@ import MoreStories from "../../modules/blog/components/more-stories";
 import HeroPost from "../../modules/blog/components/hero-post";
 import Intro from "../../modules/blog/components/intro";
 import Layout from "../../modules/app/components/layout";
-import { getAllPosts } from "../../lib/api";
+import { getAllPosts } from "../../lib/postApi";
 import Head from "next/head";
 import Post from "../../modules/blog/interfaces/post";
-import Navbar from "../../modules/app/components/navbar";
 
 type Props = {
   allPosts: Post[];
@@ -22,7 +21,6 @@ export default function Blog({ allPosts }: Props) {
           <title>Gnark Blog</title>
         </Head>
         <Container>
-          <Navbar />
           <Intro />
           {heroPost && (
             <HeroPost
@@ -32,6 +30,8 @@ export default function Blog({ allPosts }: Props) {
               author={heroPost.author}
               slug={heroPost.slug}
               excerpt={heroPost.excerpt}
+              ogImage={heroPost.ogImage}
+              content={heroPost.content}
             />
           )}
           {morePosts.length > 0 && <MoreStories posts={morePosts} />}

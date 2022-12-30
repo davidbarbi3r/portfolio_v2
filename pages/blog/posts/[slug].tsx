@@ -5,7 +5,7 @@ import PostBody from "../../../modules/blog/post_component/post-body";
 import Header from "../../../modules/blog/components/header";
 import PostHeader from "../../../modules/blog/post_component/post-header";
 import Layout from "../../../modules/app/components/layout";
-import { getPostBySlug, getAllPosts } from "../../../lib/api";
+import { getPostBySlug, getAllPosts } from "../../../lib/postApi";
 import PostTitle from "../../../modules/blog/post_component/post-title";
 import Head from "next/head";
 import { CMS_NAME } from "../../../lib/constants";
@@ -26,7 +26,7 @@ export default function Post({ post, morePosts, preview }: Props) {
   return (
     <Layout preview={preview}>
       <Container>
-        <Header />
+        <Header type="blog"/>
         {router.isFallback ? (
           <PostTitle>Loading…</PostTitle>
         ) : (

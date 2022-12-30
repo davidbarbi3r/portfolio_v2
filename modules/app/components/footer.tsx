@@ -8,8 +8,8 @@ const Footer = () => {
     <footer className="bg-neutral-50 border-t border-neutral-200">
       <Container>
         <div className="py-28 flex flex-col items-center justify-center">
-          <h3 className="text-3xl font-bold tracking-tighter leading-tight text-center mb-3 lg:mb-3 ">
-            Built with love by <strong className="text-5xl">Gnark</strong>
+          <h3 className="text-2xl font-bold tracking-tighter leading-tight text-center mb-3 lg:mb-3 ">
+            Built with love by <strong className="text-3xl">David</strong>
           </h3>
           <div className="flex flex-col md:flex-row justify-center items-center">
             <a

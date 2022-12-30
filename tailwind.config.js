@@ -1,8 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./components/**/*.tsx', './pages/**/*.tsx'],
+  content: ['./modules/**/**/*.tsx', './pages/**/*.tsx', './modules/**/*.tsx'],
   theme: {
     extend: {
+      backgroundImage: {
+        'hero-pattern': "url('/assets/23062019.jpg')",
+      },
       colors: {
         'accent-1': '#FAFAFA',
         'accent-2': '#EAEAEA',

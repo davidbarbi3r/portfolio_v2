@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import { useState } from 'react'
 
 function Navbar() {
@@ -9,32 +10,40 @@ function Navbar() {
 
 
   return (
-    <header>
-        <div className='mt-3 flex justify-between items-center'>
-            <div className='flex items-center'>
-                <Image
-                    className='rounded-full md:object-cover max-w-[60px] max-h-[60px] object-contain mr-3'
-                    src="/assets/blog/authors/gnark.jpg"
-                    alt='Gnark Logo'
-                    width={100}
-                    height={100}
-                />
-                <h1 className="text-3xl font-bold"><span className='text-4xl'>G</span>nark</h1>
-            </div>
+    <header className='shadow-sm'>
+        <div className='py-3 flex justify-between items-center container mx-auto px-5 border-'>
+            <Link href='/'>
+                <div className='flex items-center'>
+                    {/* <Image
+                        className='rounded-full md:object-cover max-w-[60px] max-h-[60px] object-contain mr-3'
+                        src="/assets/blog/authors/gnark.jpg"
+                        alt='Gnark Logo'
+                        width={100}
+                        height={100}
+                    /> */}
+                    <h1 className="text-3xl font-bold">David Barbi3r</h1>
+                </div>
+            </Link>
             <nav>
                 <div className="hidden sm:block">
-                    <ul className='flex mt-3 items-center'>
+                    <ul className='flex items-center font-bold'>
+                        <a href='/' className='p-2 py-4'>
                         <li className='text-center'>
-                            <a href='/'>Home</a>
+                                HOME
                         </li>
+                        </a>
                         <span className='bg-black h-[1px] w-5 rotate-90'></span>
-                        <li className='text-center'>
-                            <a href='/projects'>Projects</a>
-                        </li>
+                        <a href='/projects' className='p-2 py-4'>
+                            <li className='text-center'>
+                                    PROJECTS
+                            </li>
+                        </a>
                         <span className='bg-black h-[1px] w-5 rotate-90'></span>
+                        <a href='/blog' className='p-2 py-4'>
                         <li className='text-center'>
-                            <a href='/blog'>Blog</a>
+                                BLOG
                         </li>
+                        </a>
                     </ul>
                 </div>
                 <div className="sm:hidden">
@@ -51,11 +60,11 @@ function Navbar() {
             </nav>
         </div>
         
-        {menuOpen && <div className="sm:hidden" id="mobile-menu">
+        {menuOpen && <div className="sm:hidden absolute min-w-full bg-white shadow-md" id="mobile-menu">
             <div className="px-2 pt-2 pb-3 space-y-1">
-                <a href="/" className="block px-3 py-2 rounded-md text-base font-medium text-white bg-gray-900">Home</a>
-                <a href="/projects" className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Projects</a>
-                <a href="/blog" className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">Blog</a>
+                <a href="/" className="block px-3 py-2 rounded-md text-base font-medium  text-gray-600 hover:text-white hover:bg-gray-700">Home</a>
+                <a href="/projects" className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-white hover:bg-gray-700">Projects</a>
+                <a href="/blog" className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-white hover:bg-gray-700">Blog</a>
             </div>
         </div>}
     </header>

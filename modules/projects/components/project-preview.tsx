@@ -1,26 +1,16 @@
-import Avatar from "../utils/avatar";
 import DateFormatter from "../../app/utils/date-formatter";
 import CoverImage from "./cover-image";
 import Link from "next/link";
-import type Author from "../interfaces/author";
+import Project from "../interfaces/project";
 
-type Props = {
-  title: string;
-  coverImage: string;
-  date: string;
-  excerpt: string;
-  author: Author;
-  slug: string;
-};
-
-const ProjectPreview = ({
+const PostPreview = ({
   title,
   coverImage,
   date,
   excerpt,
-  author,
+  techs,
   slug,
-}: Props) => {
+}: Project) => {
   return (
     <div>
       <div className="mb-5">
@@ -28,8 +18,8 @@ const ProjectPreview = ({
       </div>
       <h3 className="text-3xl mb-3 leading-snug">
         <Link
-          as={`/blog/projects/${slug}`}
-          href="/blog/projects/[slug]"
+          as={`/projects/${slug}`}
+          href="/projects/[slug]"
           className="hover:underline"
         >
           {title}
@@ -39,9 +29,8 @@ const ProjectPreview = ({
         <DateFormatter dateString={date} />
       </div>
       <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
-      <Avatar name={author.name} picture={author.picture} />
     </div>
   );
 };
 
-export default ProjectPreview;
+export default PostPreview;
