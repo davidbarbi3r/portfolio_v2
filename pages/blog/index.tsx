@@ -1,21 +1,20 @@
-import Container from '../../components/container'
-import MoreStories from '../../components/more-stories'
-import HeroPost from '../../components/hero-post'
-import Intro from '../../components/intro'
-import Layout from '../../components/layout'
-import { getAllPosts } from '../../lib/api'
-import Head from 'next/head'
-import { CMS_NAME } from '../../lib/constants'
-import Post from '../../interfaces/post'
-import Navbar from '../../components/navbar'
+import Container from "../../modules/app/utils/container";
+import MoreStories from "../../modules/blog/components/more-stories";
+import HeroPost from "../../modules/blog/components/hero-post";
+import Intro from "../../modules/blog/components/intro";
+import Layout from "../../modules/app/components/layout";
+import { getAllPosts } from "../../lib/api";
+import Head from "next/head";
+import Post from "../../modules/blog/interfaces/post";
+import Navbar from "../../modules/app/components/navbar";
 
 type Props = {
-  allPosts: Post[]
-}
+  allPosts: Post[];
+};
 
 export default function Blog({ allPosts }: Props) {
-  const heroPost = allPosts[0]
-  const morePosts = allPosts.slice(1)
+  const heroPost = allPosts[0];
+  const morePosts = allPosts.slice(1);
   return (
     <>
       <Layout>
@@ -23,7 +22,7 @@ export default function Blog({ allPosts }: Props) {
           <title>Gnark Blog</title>
         </Head>
         <Container>
-          <Navbar/>
+          <Navbar />
           <Intro />
           {heroPost && (
             <HeroPost
@@ -39,20 +38,20 @@ export default function Blog({ allPosts }: Props) {
         </Container>
       </Layout>
     </>
-  )
+  );
 }
 
 export const getStaticProps = async () => {
   const allPosts = getAllPosts([
-    'title',
-    'date',
-    'slug',
-    'author',
-    'coverImage',
-    'excerpt',
-  ])
+    "title",
+    "date",
+    "slug",
+    "author",
+    "coverImage",
+    "excerpt",
+  ]);
 
   return {
     props: { allPosts },
-  }
-}
+  };
+};
