@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Layout from "../../modules/app/components/layout";
 import Container from "../../modules/app/utils/container";
-import Intro from "../../modules/blog/components/intro";
+import Intro from "../../modules/projects/components/intro";
 import Project from "../../modules/projects/interfaces/project";
 import { getAllProjects } from "../../lib/projectApi";
 import HeroProject from "../../modules/projects/components/hero-project";
@@ -12,8 +12,8 @@ type Props = {
 };
 
 export default function Projects({ allProjects }: Props) {
-  const heroProject = allProjects[0];
-  const moreProjects = allProjects.slice(1);
+  const heroProject = allProjects.length > 0 ? allProjects[0] : null;
+  const moreProjects = allProjects.length > 1 ? allProjects.slice(1) : null;
   return (
     <>
       <Layout>
