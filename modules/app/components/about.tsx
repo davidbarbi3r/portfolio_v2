@@ -10,16 +10,16 @@ function About() {
             </h2>
 
             <p className="text-center">
-                Tech and finance passionate, after having worked for 9 years in financial audit, I decided to evolve and add software development to my skills.
+            I am a tech and finance enthusiast with a background in financial audit. After spending nine years in the industry, I decided to expand my skillset to include software development.
             </p>
             <p className="mt-5 text-center">
-                I'm now working as a freelance developer and I'm looking for new opportunities.
+            As a freelance developer, I am always on the lookout for new opportunities to showcase my skills.
             </p>
             <p className="mt-5 text-center">
-                I'm convinced that one of the best way to create value is to merge different skillsets, in my case: <strong className="block">finance and developement</strong>
+            I believe that combining diverse skillsets is a powerful way to create value, and I am using my knowledge of finance and development to develop solutions that are useful for end users. 
             </p>    
             <p className="mt-5 text-center">
-                I'm using my knowledge of processes & needs to develop useful solutions for end users. My goal is to evolve into blockchain development which is a powerful and fast-growing technology.
+            My long-term goal is to specialize in blockchain development, as this is a rapidly growing and impactful technology. Thank you for considering me for your project or opportunity.
             </p>
             <div className="flex w-full justify-center">
                 <Link href="/blog" className="mt-5 text-center p-3 text-slate-100 hover:text-zinc-800 bg-zinc-800 hover:bg-zinc-100 block border-zinc-800 border">
