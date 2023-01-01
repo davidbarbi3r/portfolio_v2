@@ -30,7 +30,7 @@ const CoverImage = ({ title, src, slug, techs }: Props) => {
         </Link>
         <div className='absolute bottom-2 flex flex-wrap px-3 py-1 rounded-lg w-full font-bold'>
           {techs?.map((tech) => (
-              <p key={tech} className="text-sm text-gray-600 bg-slate-50 spanx-3 py-1 rounded-lg mr-2 shadow-md">
+              <p key={tech} className="text-xs md:text-sm text-gray-600 bg-slate-50 spanx-3 py-1 px-2 rounded-lg mr-2 shadow-md">
                 {tech}
               </p>
           ))}
