@@ -3,9 +3,9 @@ import Layout from "../../modules/app/components/layout";
 import Container from "../../modules/app/utils/container";
 import Intro from "../../modules/projects/components/intro";
 import Project from "../../modules/projects/interfaces/project";
-import { getAllProjects } from "../../lib/projectApi";
 import HeroProject from "../../modules/projects/components/hero-project";
 import MoreProjects from "../../modules/projects/components/moreProjects";
+import { getAllProjects } from "../../lib/projectApi";
 
 type Props = {
   allProjects: Project[];

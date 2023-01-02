@@ -3,7 +3,7 @@ import CoverImage from "./cover-image";
 import Link from "next/link";
 import Project from "../interfaces/project";
 
-const PostPreview = ({
+const ProjectPreview = ({
   title,
   coverImage,
   date,
@@ -25,6 +25,11 @@ const PostPreview = ({
           {title}
         </Link>
       </h3>
+      <div className="mt-[-10px] mb-2">
+        {techs.map(tech => <span className="mr-2 bg-slate-200 py-1 px-2 rounded-lg font-bold">
+          {tech}
+        </span>)}
+      </div>
       <div className="text-lg mb-4">
         <DateFormatter dateString={date} />
       </div>
@@ -33,4 +38,4 @@ const PostPreview = ({
   );
 };
 
-export default PostPreview;
+export default ProjectPreview;
