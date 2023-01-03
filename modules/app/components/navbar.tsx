@@ -29,19 +29,19 @@ function Navbar() {
                     <ul className='flex items-center font-bold'>
                         <a href='/' className='p-2 py-4'>
                         <li className='text-center'>
-                                HOME
+                            HOME
                         </li>
                         </a>
                         <span className='bg-black h-[1px] w-5 rotate-90'></span>
                         <a href='/projects' className='p-2 py-4'>
                             <li className='text-center'>
-                                    PROJECTS
+                                PROJECTS
                             </li>
                         </a>
                         <span className='bg-black h-[1px] w-5 rotate-90'></span>
                         <a href='/blog' className='p-2 py-4'>
                         <li className='text-center'>
-                                BLOG
+                            BLOG
                         </li>
                         </a>
                     </ul>
@@ -60,7 +60,7 @@ function Navbar() {
             </nav>
         </div>
         
-        {menuOpen && <div className="sm:hidden absolute min-w-full bg-white shadow-md" id="mobile-menu">
+        {menuOpen && <div className="sm:hidden absolute min-w-full bg-white shadow-md z-10" id="mobile-menu">
             <div className="px-2 pt-2 pb-3 space-y-1">
                 <a href="/" className="block px-3 py-2 rounded-md text-base font-medium  text-gray-600 hover:text-white hover:bg-gray-700">Home</a>
                 <a href="/projects" className="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-white hover:bg-gray-700">Projects</a>

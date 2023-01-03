@@ -3,7 +3,7 @@ import heroPalm from "../../../public/assets/23062019.jpg"
 
 function Hero() {
   return (
-    <section className="relative h-[80vh] sm:h-[55vh] mix-blend-exclusion overflow-hidden drop-shadow-xl">
+    <section className="relative h-[80vh] sm:h-[55vh] overflow-hidden drop-shadow-xl">
         <Image
             src={heroPalm}
             alt="Fougere palm"
