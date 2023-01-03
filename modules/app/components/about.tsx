@@ -4,7 +4,6 @@ import Link from "next/link"
 function About() {
   return (
     <section className="relative container flex flex-col md:flex-row items-center justify-between w-full mx-auto my-6 md:my-16">
-        <div className="bg-zinc-800 h-[50vh] w-[800px] md:w-[40%] md:bottom-[-10px] lg:bottom-[-40px] xl:w-[25%] absolute bottom-[-40px] right-[-30px] -z-10"></div>
         <div className="md:max-w-[50%] px-5">
             <h2 className="text-2xl sm:text-3xl mb-3 font-semibold text-center mx-auto px-8">
                 About me
@@ -34,7 +33,8 @@ function About() {
                 </Link>
             </div>
         </div>
-        <div>
+        <div className="relative">
+            <div className="bg-zinc-800 h-[90%] w-[90%] absolute bottom-[-20px] right-[-5px] -z-10"></div>
             <Image
                 src="/assets/cottonbro.jpg"
                 alt="Cottonbro"
