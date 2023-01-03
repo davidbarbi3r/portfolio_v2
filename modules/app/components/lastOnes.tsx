@@ -2,6 +2,7 @@ import Project from "../../projects/interfaces/project";
 import PostType from "../../blog/interfaces/post";
 import Image from "next/image";
 import DateFormatter from "../utils/date-formatter";
+import Link from "next/link";
 
 type Props = {
     lastProject: Project;
@@ -19,13 +20,18 @@ function lastOnes({ lastProject, lastPost }: Props) {
             My Last project
           </h2>
           <div className="overflow-hidden">
-            <Image 
-              src={lastProject.coverImage}
-              alt={lastProject.title}
-              width={500}
-              height={500}
-              className="shadow-sm w-full hover:scale-105 transition duration-300 ease-in-out hover:cursor-pointer"
-              />
+            <Link
+              as={`/projects/${lastProject.slug}`}
+              href="/projects/[slug]"
+            >
+              <Image 
+                src={lastProject.coverImage}
+                alt={lastProject.title}
+                width={500}
+                height={500}
+                className="shadow-sm w-full hover:scale-105 hover:shadow-lg transition hover:cursor-pointer"
+                />
+            </Link>
           </div>
           <div className="flex flex-col">
             <div className="flex flex-col">
@@ -48,13 +54,17 @@ function lastOnes({ lastProject, lastPost }: Props) {
             My Last Article
           </h2>
           <div className="overflow-hidden">
-            <Image 
-              src={lastPost.coverImage}
-              alt={lastPost.title}
-              width={500}
-              height={500}
-              className="shadow-sm w-full hover:scale-105 transition duration-300 ease-in-out hover:cursor-pointer"
-            />
+            <Link
+              as={`/blog/posts/${lastPost.slug}`}
+              href="/blog/posts/[slug]">
+                <Image 
+                  src={lastPost.coverImage}
+                  alt={lastPost.title}
+                  width={500}
+                  height={500}
+                  className="shadow-sm w-full hover:scale-105 transition duration-300 ease-in-out hover:cursor-pointer"
+                />
+              </Link>
           </div>
           <div className="flex flex-col">
             <div className="flex flex-col">
