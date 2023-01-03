@@ -1,15 +1,15 @@
 import { useRouter } from "next/router";
 import ErrorPage from "next/error";
 import Container from "../../modules/app/utils/container";
-import ProjectBody from "../../modules/projects/project_component/project-body";
-import Header from "../../modules/projects/components/header";
-import ProjectHeader from "../../modules/projects/project_component/project-header";
+import ProjectBody from "../../modules/markdown_comp/projects/project_component/project-body";
+import Header from "../../modules/markdown_comp/projects/components/header";
+import ProjectHeader from "../../modules/markdown_comp/projects/project_component/project-header";
 import Layout from "../../modules/app/components/layout";
-import ProjectTitle from "../../modules/projects/project_component/project-title";
+import ProjectTitle from "../../modules/markdown_comp/projects/project_component/project-title";
 import Head from "next/head";
 import { CMS_NAME } from "../../lib/constants";
 import markdownToHtml from "../../lib/markdownToHtml";
-import Project from "../../modules/projects/interfaces/project";
+import Project from "../../modules/markdown_comp/projects/interfaces/project";
 import { getAllProjects, getProjectBySlug } from "../../lib/projectApi";
 
 type Props = {
@@ -63,7 +63,7 @@ export async function getStaticProps({ params }: Params) {
     "title",
     "date",
     "slug",
-    "author",
+    "techs",
     "content",
     "ogImage",
     "coverImage",

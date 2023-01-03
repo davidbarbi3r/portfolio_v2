@@ -1,5 +1,5 @@
 import Avatar from "../utils/avatar";
-import DateFormatter from "../../app/utils/date-formatter";
+import DateFormatter from "../../../app/utils/date-formatter";
 import CoverImage from "../components/cover-image";
 import PostTitle from "./post-title";
 import type Author from "../interfaces/author";

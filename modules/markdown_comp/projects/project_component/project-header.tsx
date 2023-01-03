@@ -1,4 +1,4 @@
-import DateFormatter from "../../app/utils/date-formatter";
+import DateFormatter from "../../../app/utils/date-formatter";
 import CoverImage from "../components/cover-image";
 import ProjectTitle from "./project-title";
 

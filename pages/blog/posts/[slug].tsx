@@ -1,16 +1,16 @@
 import { useRouter } from "next/router";
 import ErrorPage from "next/error";
 import Container from "../../../modules/app/utils/container";
-import PostBody from "../../../modules/blog/post_component/post-body";
-import Header from "../../../modules/blog/components/header";
-import PostHeader from "../../../modules/blog/post_component/post-header";
+import PostBody from "../../../modules/markdown_comp/blog/post_component/post-body";
+import Header from "../../../modules/markdown_comp/blog/components/header";
+import PostHeader from "../../../modules/markdown_comp/blog/post_component/post-header";
 import Layout from "../../../modules/app/components/layout";
 import { getPostBySlug, getAllPosts } from "../../../lib/postApi";
-import PostTitle from "../../../modules/blog/post_component/post-title";
+import PostTitle from "../../../modules/markdown_comp/blog/post_component/post-title";
 import Head from "next/head";
 import { CMS_NAME } from "../../../lib/constants";
 import markdownToHtml from "../../../lib/markdownToHtml";
-import type PostType from "../../../modules/blog/interfaces/post";
+import type PostType from "../../../modules/markdown_comp/blog/interfaces/post";
 
 type Props = {
   post: PostType;
@@ -26,7 +26,7 @@ export default function Post({ post, morePosts, preview }: Props) {
   return (
     <Layout preview={preview}>
       <Container>
-        <Header type="blog"/>
+        <Header type="blog" />
         {router.isFallback ? (
           <PostTitle>Loading…</PostTitle>
         ) : (

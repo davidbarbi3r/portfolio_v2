@@ -1,11 +1,11 @@
 import Container from "../../modules/app/utils/container";
-import MoreStories from "../../modules/blog/components/more-stories";
-import HeroPost from "../../modules/blog/components/hero-post";
-import Intro from "../../modules/blog/components/intro";
+import MoreStories from "../../modules/markdown_comp/blog/components/more-stories";
+import HeroPost from "../../modules/markdown_comp/blog/components/hero-post";
+import Intro from "../../modules/markdown_comp/blog/components/intro";
 import Layout from "../../modules/app/components/layout";
 import { getAllPosts } from "../../lib/postApi";
 import Head from "next/head";
-import Post from "../../modules/blog/interfaces/post";
+import Post from "../../modules/markdown_comp/blog/interfaces/post";
 
 type Props = {
   allPosts: Post[];
