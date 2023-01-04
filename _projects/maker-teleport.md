@@ -3,7 +3,7 @@ title: 'Maker DAI Teleport UI'
 excerpt: 'UI for the Maker Teleport Bridge, the goal was to provide a smooth user experience to bridge assets from L2 to L1 smoothly using the TeleportSDK and smart contract.'
 coverImage: '/assets/project/maker-teleport/teleport.png'
 date: '2022-11-16T05:35:07.322Z'
-techs: ["Typescript", "Next.js", "ethers.js", "rainbow.js"]
+techs: ["Typescript", "Next.js", "ethers.js"]
 ogImage:
   url: '/assets/project/maker-teleport/teleport.png'
 ---

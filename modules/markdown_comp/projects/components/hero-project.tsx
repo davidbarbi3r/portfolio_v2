@@ -1,5 +1,5 @@
 import DateFormatter from "../../../app/utils/date-formatter";
-import CoverImage from "./cover-image";
+import CoverImage from "../../components/cover-image";
 import Link from "next/link";
 import Project from "../interfaces/project";
 
@@ -14,7 +14,7 @@ const HeroProject = ({
   return (
     <section>
       <div className="mb-8 md:mb-16">
-        <CoverImage title={title} src={coverImage} slug={slug} techs={techs}/>
+        <CoverImage title={title} src={coverImage} slug={slug} tags={techs} />
       </div>
       <div className="md:grid md:grid-cols-2 md:gap-x-16 lg:gap-x-8 mb-20 md:mb-28">
         <div>

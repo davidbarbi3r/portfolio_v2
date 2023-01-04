@@ -1,5 +1,5 @@
 import DateFormatter from "../../../app/utils/date-formatter";
-import CoverImage from "./cover-image";
+import CoverImage from "../../components/cover-image";
 import Link from "next/link";
 import Project from "../interfaces/project";
 
@@ -26,11 +26,14 @@ const ProjectPreview = ({
         </Link>
       </h3>
       <div className="mt-[-10px] mb-2">
-        {techs.map(tech => <span 
-        key={tech}
-        className="text-xs md:text-sm mr-2 bg-slate-200 py-1 px-2 rounded-lg font-bold shadow-md">
-          {tech}
-        </span>)}
+        {techs.map((tech) => (
+          <span
+            key={tech}
+            className="text-xs md:text-sm mr-2 bg-slate-200 py-1 px-2 rounded-lg font-bold shadow-md"
+          >
+            {tech}
+          </span>
+        ))}
       </div>
       <div className="text-lg mb-4">
         <DateFormatter dateString={date} />

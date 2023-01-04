@@ -6,10 +6,10 @@ type Props = {
   title: string
   src: string
   slug?: string
-  techs?: string[]
+  tags?: string[]
 }
 
-const CoverImage = ({ title, src, slug, techs }: Props) => {
+const CoverImage = ({ title, src, slug, tags }: Props) => {
   const image = (
     <Image
       src={src}
@@ -19,6 +19,7 @@ const CoverImage = ({ title, src, slug, techs }: Props) => {
       })}
       width={1300}
       height={630}
+      priority
     />
   )
   return (
@@ -29,9 +30,9 @@ const CoverImage = ({ title, src, slug, techs }: Props) => {
           {image}
         </Link>
         <div className='absolute bottom-2 flex flex-wrap px-3 py-1 rounded-lg w-full font-bold'>
-          {techs?.map((tech) => (
-              <p key={tech} className="text-xs md:text-sm text-gray-600 bg-slate-50 spanx-3 py-1 px-2 rounded-lg mr-2 shadow-md">
-                {tech}
+          {tags?.map((tag) => (
+              <p key={tag} className="text-xs md:text-sm text-gray-600 bg-slate-50 spanx-3 py-1 px-2 rounded-lg mr-2 shadow-md">
+                {tag}
               </p>
           ))}
         </div>

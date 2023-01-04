@@ -7,18 +7,36 @@ import HeroProject from "../../modules/markdown_comp/projects/components/hero-pr
 import MoreProjects from "../../modules/markdown_comp/projects/components/moreProjects";
 import { getAllProjects } from "../../lib/projectApi";
 import { useState } from "react";
-import Filters from "../utils/Filters";
-import removeDuplicates from "../utils/removeDuplicate";
+import Filters from "../../modules/markdown_comp/utils/Filters";
+import removeDuplicates from "../../modules/markdown_comp/utils/removeDuplicate";
 
 type Props = {
   allProjects: Project[];
 };
 
 export default function Projects({ allProjects }: Props) {
-  // const filters = removeDuplicates([...allProjects.map((project) => project.techs).flat()]);
-  // allProjects.map((project) => project.techs)
+  const allFilters = removeDuplicates([...allProjects.map((project) => project.techs).flat()]);
   
-  // const [useFilter, setUseFilter] = useState<string[]>(filters);
+  const [filters, setFilters] = useState<string[]>([]);
+
+  const filter = {
+    addFilter : (filter: string): void => {
+      setFilters((prev) => [...prev, filter])
+    },
+
+    removeFilter: (filter: string): void => {
+      setFilters((prev) => [...prev].filter((s) => s != filter))
+    }
+  }
+
+allProjects = allProjects.filter((project) => {
+  if (filters.length === 0) {
+    return project
+  } else {
+    return project.techs.some((tech) => filters.includes(tech))
+  }
+})
+
   const heroProject = allProjects.length > 0 ? allProjects[0] : null;
   const moreProjects = allProjects.length > 1 ? allProjects.slice(1) : null;
   return (
@@ -29,7 +47,7 @@ export default function Projects({ allProjects }: Props) {
         </Head>
         <Container>
           <Intro />
-          {/* <Filters filters={filters} setUseFilter={setUseFilter} /> */}
+          <Filters allFilters={allFilters} filters={filters} add={filter.addFilter} remove={filter.removeFilter} />
           {heroProject && (
             <HeroProject
               title={heroProject.title}
@@ -42,7 +60,7 @@ export default function Projects({ allProjects }: Props) {
               content={heroProject.content}
             />
           )}
-          {moreProjects.length > 0 && <MoreProjects projects={moreProjects} />}
+          {moreProjects && <MoreProjects projects={moreProjects} />}
         </Container>
       </Layout>
     </>

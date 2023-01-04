@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import ErrorPage from "next/error";
 import Container from "../../../modules/app/utils/container";
 import PostBody from "../../../modules/markdown_comp/blog/post_component/post-body";
-import Header from "../../../modules/markdown_comp/blog/components/header";
+import Header from "../../../modules/markdown_comp/components/header";
 import PostHeader from "../../../modules/markdown_comp/blog/post_component/post-header";
 import Layout from "../../../modules/app/components/layout";
 import { getPostBySlug, getAllPosts } from "../../../lib/postApi";
@@ -43,6 +43,7 @@ export default function Post({ post, morePosts, preview }: Props) {
                 coverImage={post.coverImage}
                 date={post.date}
                 author={post.author}
+                tags={post.themes}
               />
               <PostBody content={post.content} />
             </article>
