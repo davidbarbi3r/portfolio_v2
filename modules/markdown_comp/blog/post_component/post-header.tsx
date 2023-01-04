@@ -1,6 +1,6 @@
 import Avatar from "../../utils/avatar";
 import DateFormatter from "../../../app/utils/date-formatter";
-import CoverImage from "../../components/cover-image";
+import CoverImage from "../../projects/components/cover-image";
 import PostTitle from "./post-title";
 import type Author from "../interfaces/author";
 
@@ -20,7 +20,7 @@ const PostHeader = ({ title, coverImage, date, author, tags }: Props) => {
         <Avatar name={author.name} picture={author.picture} />
       </div>
       <div className="mb-8 md:mb-16 sm:mx-0">
-        <CoverImage title={title} src={coverImage} tags={tags}/>
+        <CoverImage title={title} src={coverImage} tags={tags} />
       </div>
       <div className="max-w-2xl mx-auto">
         <div className="block md:hidden mb-6">

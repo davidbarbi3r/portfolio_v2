@@ -1,3 +1,4 @@
+import Providers from "../hooks/Providers";
 import Footer from "./footer";
 import Meta from "./meta";
 import Navbar from "./navbar";
@@ -9,16 +10,16 @@ type Props = {
 
 const Layout = ({ preview, children }: Props) => {
   return (
-    <>
+    <Providers>
       <Meta />
-      <div className="min-h-screen">
+      <div>
       <Navbar/>
-        <main className="overflow-hidden">
+        <main className="overflow-hidden dark:bg-zinc-800 transition-all duration-300">
           {children}
         </main>
       </div>
       <Footer />
-    </>
+    </Providers>
   );
 };
 

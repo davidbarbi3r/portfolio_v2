@@ -5,7 +5,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 const Footer = () => {
   return (
-    <footer className="bg-neutral-50 border-t border-neutral-200">
+    <footer className="bg-neutral-50 border-t border-neutral-200 dark:bg-zinc-900">
       <Container>
         <div className="py-28 flex flex-col items-center justify-center">
           <h3 className="text-2xl font-bold tracking-tighter leading-tight text-center mb-3 lg:mb-3 ">

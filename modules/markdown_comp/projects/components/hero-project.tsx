@@ -1,5 +1,5 @@
 import DateFormatter from "../../../app/utils/date-formatter";
-import CoverImage from "../../components/cover-image";
+import CoverImage from "./cover-image";
 import Link from "next/link";
 import Project from "../interfaces/project";
 

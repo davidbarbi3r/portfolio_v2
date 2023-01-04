@@ -11,7 +11,7 @@ type Props = {
 
 function lastOnes({ lastProject, lastPost }: Props) {
   return (
-    <section className="mt-8 bg-zinc-100">
+    <section className="mt-8 bg-zinc-100 dark:bg-zinc-900">
       <div className="container flex flex-col mx-auto md:flex-row justify-between my-8">
         <div className="flex flex-col w-full md:w-1/2 px-4">
           <h2 className="my-8 text-2xl md:text-3xl font-bold tracking-tighter leading-tight text-center">

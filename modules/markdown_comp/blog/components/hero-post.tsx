@@ -1,6 +1,6 @@
 import Avatar from "../../utils/avatar";
 import DateFormatter from "../../../app/utils/date-formatter";
-import CoverImage from "../../components/cover-image";
+import CoverImage from "../../projects/components/cover-image";
 import Link from "next/link";
 import PostType from "../interfaces/post";
 
@@ -16,7 +16,7 @@ const HeroPost = ({
   return (
     <section>
       <div className="mb-8 md:mb-16">
-        <CoverImage title={title} src={coverImage} slug={slug} tags={themes}/>
+        <CoverImage title={title} src={coverImage} slug={slug} tags={themes} />
       </div>
       <div className="md:grid md:grid-cols-2 md:gap-x-16 lg:gap-x-8 mb-20 md:mb-28">
         <div>
