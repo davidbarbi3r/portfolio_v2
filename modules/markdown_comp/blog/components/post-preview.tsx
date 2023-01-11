@@ -1,6 +1,6 @@
 import Avatar from "../../utils/avatar";
 import DateFormatter from "../../../app/utils/date-formatter";
-import CoverImage from "../../projects/components/cover-image";
+import CoverImage from "./cover-image";
 import Link from "next/link";
 import type Author from "../interfaces/author";
 import getReadingTime from "../../utils/getAverageTime";
