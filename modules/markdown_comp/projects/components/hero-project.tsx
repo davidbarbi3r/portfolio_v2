@@ -2,6 +2,7 @@ import DateFormatter from "../../../app/utils/date-formatter";
 import CoverImage from "./cover-image";
 import Link from "next/link";
 import Project from "../interfaces/project";
+import getReadingTime from "../../utils/getAverageTime";
 
 const HeroProject = ({
   title,
@@ -10,7 +11,10 @@ const HeroProject = ({
   excerpt,
   techs,
   slug,
+  content
 }: Project) => {
+  const readingTime = getReadingTime(content);
+
   return (
     <section>
       <div className="mb-8 md:mb-16">
@@ -28,7 +32,8 @@ const HeroProject = ({
             </Link>
           </h3>
           <div className="mb-4 md:mb-0 text-lg">
-            <DateFormatter dateString={date} />
+            <DateFormatter dateString={date} /> • 
+          <span className="ml-1 italic text-sm">{readingTime} min read</span>
           </div>
         </div>
         <div>

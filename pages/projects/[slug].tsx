@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import { motion, useScroll, useSpring } from "framer-motion";
 import ErrorPage from "next/error";
 import Container from "../../modules/app/utils/container";
 import ProjectBody from "../../modules/markdown_comp/projects/project_component/project-body";
@@ -22,8 +23,18 @@ export default function Post({ project, moreProjects, preview }: Props) {
   if (!router.isFallback && !project?.slug) {
     return <ErrorPage statusCode={404} />;
   }
+
+  const { scrollYProgress } = useScroll();
+  // useSpring is used to smooth out the animation with velocity
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
+
   return (
     <Layout preview={preview}>
+      <motion.div className="fixed top-0 left-0 right-0 h-2 bg-yellow-300 origin-[0%]" style={{ scaleX }} />
       <Container>
         <Header type="project" />
         {router.isFallback ? (
@@ -41,6 +52,7 @@ export default function Post({ project, moreProjects, preview }: Props) {
                 title={project.title}
                 coverImage={project.coverImage}
                 date={project.date}
+                content={project.content}
               />
               <ProjectBody content={project.content} />
             </article>

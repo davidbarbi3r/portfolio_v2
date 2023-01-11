@@ -1,4 +1,5 @@
 import DateFormatter from "../../../app/utils/date-formatter";
+import getReadingTime from "../../utils/getAverageTime";
 import CoverImage from "../components/cover-image";
 import ProjectTitle from "./project-title";
 
@@ -7,9 +8,12 @@ type Props = {
   coverImage: string;
   date: string;
   techs?: string[];
+  content: string;
 };
 
-const ProjectHeader = ({ title, coverImage, date, techs }: Props) => {
+const ProjectHeader = ({ title, coverImage, date, techs, content }: Props) => {
+  const readingTime = getReadingTime(content)
+  
   return (
     <>
       <ProjectTitle>{title}</ProjectTitle>
@@ -20,7 +24,8 @@ const ProjectHeader = ({ title, coverImage, date, techs }: Props) => {
       <div className="max-w-2xl mx-auto">
         <div className="block md:hidden mb-6"></div>
         <div className="mb-6 text-lg">
-          <DateFormatter dateString={date} />
+          <DateFormatter dateString={date} /> • 
+          <span className="ml-1 italic text-sm">{readingTime} min read</span>
         </div>
       </div>
     </>

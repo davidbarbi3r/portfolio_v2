@@ -38,6 +38,7 @@ export const getStaticProps = async () => {
     "techs",
     "coverImage",
     "excerpt",
+    "content"
   ]);
 
   const allPosts = getAllPosts([
@@ -47,6 +48,7 @@ export const getStaticProps = async () => {
     "author",
     "coverImage",
     "excerpt",
+    "content"
   ]);
 
   return {

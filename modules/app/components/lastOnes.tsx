@@ -3,6 +3,7 @@ import PostType from "../../markdown_comp/blog/interfaces/post";
 import Image from "next/image";
 import DateFormatter from "../utils/date-formatter";
 import Link from "next/link";
+import getReadingTime from "../../markdown_comp/utils/getAverageTime";
 
 type Props = {
   lastProject: Project;
@@ -10,6 +11,9 @@ type Props = {
 };
 
 function lastOnes({ lastProject, lastPost }: Props) {
+  const projectReadingTime = getReadingTime(lastProject.content);
+  const postReadingTime = getReadingTime(lastPost.content);
+
   return (
     <section className="mt-8 bg-zinc-100 dark:bg-zinc-900">
       <div className="container flex flex-col mx-auto md:flex-row justify-between my-8">
@@ -39,7 +43,8 @@ function lastOnes({ lastProject, lastPost }: Props) {
                 </a>
               </h3>
               <div className="mb-4 text-lg">
-                <DateFormatter dateString={lastProject.date} />
+                <DateFormatter dateString={lastProject.date} /> • 
+                <span className="ml-1 italic text-sm">{projectReadingTime} min read</span>
               </div>
             </div>
           </div>
@@ -70,7 +75,8 @@ function lastOnes({ lastProject, lastPost }: Props) {
                 </a>
               </h3>
               <div className="mb-4 text-lg">
-                <DateFormatter dateString={lastPost.date} />
+                <DateFormatter dateString={lastPost.date} /> • 
+                <span className="ml-1 italic text-sm">{postReadingTime} min read</span>
               </div>
             </div>
           </div>

@@ -2,6 +2,7 @@ import DateFormatter from "../../../app/utils/date-formatter";
 import CoverImage from "./cover-image";
 import Link from "next/link";
 import Project from "../interfaces/project";
+import getReadingTime from "../../utils/getAverageTime";
 
 const ProjectPreview = ({
   title,
@@ -10,7 +11,10 @@ const ProjectPreview = ({
   excerpt,
   techs,
   slug,
+  content
 }: Project) => {
+  const readingTime = getReadingTime(content);
+
   return (
     <div>
       <div className="mb-5">
@@ -36,7 +40,8 @@ const ProjectPreview = ({
         ))}
       </div>
       <div className="text-lg mb-4">
-        <DateFormatter dateString={date} />
+        <DateFormatter dateString={date} /> • 
+        <span className="ml-1 italic text-sm">{readingTime} min read</span>
       </div>
       <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
     </div>

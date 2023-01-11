@@ -79,6 +79,7 @@ export const getStaticProps = async () => {
     "coverImage",
     "excerpt",
     "themes",
+    "content"
   ]);
 
   return {

@@ -3,6 +3,7 @@ import DateFormatter from "../../../app/utils/date-formatter";
 import CoverImage from "../../projects/components/cover-image";
 import Link from "next/link";
 import PostType from "../interfaces/post";
+import getReadingTime from "../../utils/getAverageTime";
 
 const HeroPost = ({
   title,
@@ -12,7 +13,10 @@ const HeroPost = ({
   author,
   slug,
   themes,
+  content,
 }: PostType) => {
+  const readingTime = getReadingTime(content);
+  
   return (
     <section>
       <div className="mb-8 md:mb-16">
@@ -30,7 +34,8 @@ const HeroPost = ({
             </Link>
           </h3>
           <div className="mb-4 md:mb-0 text-lg">
-            <DateFormatter dateString={date} />
+            <DateFormatter dateString={date} /> • 
+          <span className="ml-1 italic text-sm">{readingTime} min read</span>
           </div>
         </div>
         <div>

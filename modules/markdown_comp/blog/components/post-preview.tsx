@@ -3,6 +3,7 @@ import DateFormatter from "../../../app/utils/date-formatter";
 import CoverImage from "../../projects/components/cover-image";
 import Link from "next/link";
 import type Author from "../interfaces/author";
+import getReadingTime from "../../utils/getAverageTime";
 
 type Props = {
   title: string;
@@ -12,9 +13,10 @@ type Props = {
   author: Author;
   slug: string;
   themes?: string[];
+  content: string;
 };
 
-const ProjectPreview = ({
+const PostPreview = ({
   title,
   coverImage,
   date,
@@ -22,7 +24,10 @@ const ProjectPreview = ({
   author,
   slug,
   themes,
+  content
 }: Props) => {
+  const readingTime = getReadingTime(content);
+
   return (
     <div>
       <div className="mb-5">
@@ -48,7 +53,8 @@ const ProjectPreview = ({
         ))}
       </div>
       <div className="text-lg mb-4">
-        <DateFormatter dateString={date} />
+        <DateFormatter dateString={date} /> • 
+          <span className="ml-1 italic text-sm">{readingTime} min read</span>
       </div>
       <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
       <Avatar name={author.name} picture={author.picture} />
@@ -56,4 +62,4 @@ const ProjectPreview = ({
   );
 };
 
-export default ProjectPreview;
+export default PostPreview;

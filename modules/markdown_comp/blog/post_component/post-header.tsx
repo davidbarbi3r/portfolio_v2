@@ -3,6 +3,7 @@ import DateFormatter from "../../../app/utils/date-formatter";
 import CoverImage from "../../projects/components/cover-image";
 import PostTitle from "./post-title";
 import type Author from "../interfaces/author";
+import getReadingTime from "../../utils/getAverageTime";
 
 type Props = {
   title: string;
@@ -10,9 +11,12 @@ type Props = {
   date: string;
   author: Author;
   tags?: string[];
+  content: string;
 };
 
-const PostHeader = ({ title, coverImage, date, author, tags }: Props) => {
+const PostHeader = ({ title, coverImage, date, author, tags, content }: Props) => {
+  const readingTime = getReadingTime(content);
+  
   return (
     <>
       <PostTitle>{title}</PostTitle>
@@ -27,7 +31,8 @@ const PostHeader = ({ title, coverImage, date, author, tags }: Props) => {
           <Avatar name={author.name} picture={author.picture} />
         </div>
         <div className="mb-6 text-lg">
-          <DateFormatter dateString={date} />
+          <DateFormatter dateString={date} /> • 
+          <span className="ml-1 italic text-sm">{readingTime} min read</span>
         </div>
       </div>
     </>
