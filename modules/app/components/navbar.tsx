@@ -25,7 +25,7 @@ function Navbar() {
                     <h1 className="text-3xl font-bold">David Barbi3r</h1>
                 </div>
             </Link>
-            <nav>
+            <nav className='flex'>
                 <div className='flex items-center'>
                     <div className="hidden sm:block">
                         <ul className='flex items-center font-bold'>
