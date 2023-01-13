@@ -1,60 +1,35 @@
-import Image from "next/image";
 import Link from "next/link";
 
 function About() {
   return (
-    <section className="relative container flex flex-col md:flex-row items-center justify-between w-full mx-auto my-6 md:my-16">
-      <div className="md:max-w-[50%] px-5">
-        <h2 className="text-2xl sm:text-3xl mb-3 font-semibold text-center mx-auto px-8">
-          About me
+    <section className="relative container flex flex-col items-center justify-between w-full mx-auto my-6 md:my-16">
+      <div className="px-5">
+        <h2 className="text-xl font-main sm:text-3xl mb-3 text-center font-semibold mx-auto px-8 max-w-6xl">
+          Je suis un développeur web freelance qui aime apporter des solutions
+          et voir les idées devenir réalité.
+          J'apporte un soin particulier à la conception et à l'expérience utilisateur.
         </h2>
+        <div className="flex items-center flex-col md:flex-row w-[450px] m-auto justify-between">
+          <div>
+            <Link
+              href="/projects"
+              className="mt-5 mb-5 md:mb-0 text-center p-3 text-slate-100 block hover:text-zinc-800 bg-[#122530] dark:hover:bg-slate-100 transition-all duration-200 hover:bg-slate-100 border-zinc-800 border w-[140px]"
+            >
+              <p className="text-center font-bold">Projets</p>
+            </Link>
+          </div>
+          <div className="h-[1px] bg-slate-800 dark:bg-white w-[100px] sm:hidden"></div>
 
-        <p className="text-center">
-          I am a tech and finance enthusiast with a background in financial
-          audit. After spending nine years in the industry, I decided to expand
-          my skillset to include software development.
-        </p>
-        <p className="mt-5 text-center">
-          As a freelance developer, I am always on the lookout for new
-          opportunities to showcase my skills.
-        </p>
-        <p className="mt-5 text-center">
-          I believe that combining diverse skillsets is a powerful way to create
-          value, and I am using my knowledge of finance and development to
-          develop solutions that are useful for end users.
-        </p>
-        <p className="mt-5 text-center">
-          My long-term goal is to specialize in blockchain development, as this
-          is a rapidly growing and impactful technology. Thank you for
-          considering me for your project or opportunity.
-        </p>
-        <div className="flex w-full justify-center">
-          <Link
-            href="/blog"
-            className="mt-5 text-center p-3 text-slate-100 hover:text-zinc-800 bg-zinc-800 dark:bg-zinc-700 dark:hover:bg-yellow-200 transition-all duration-200 hover:bg-yellow-200 block border-zinc-800 border"
-          >
-            <p className="text-center font-bold ">Come read my articles</p>
-          </Link>
+          <div>
+            <Link
+              href="/blog"
+              className="mt-5 text-center p-3 text-slate-100 hover:text-zinc-800 bg-[#122530] dark:hover:bg-slate-100 transition-all duration-200 hover:bg-slate-100 block border-zinc-800 border w-[140px]"
+            >
+              <p className="text-center font-bold ">Articles</p>
+            </Link>
+          </div>
+          
         </div>
-        <p className="mt-5 text-center">or</p>
-        <div className="flex w-full justify-center">
-          <Link
-            href="/projects"
-            className="mt-5 text-center p-3 text-slate-100 block hover:text-zinc-800 bg-zinc-800 dark:bg-zinc-700 dark:hover:bg-yellow-200 transition-all duration-200 hover:bg-yellow-200 border-zinc-800 border"
-          >
-            <p className="text-center font-bold">Discover my lasts projects</p>
-          </Link>
-        </div>
-      </div>
-      <div className="relative">
-        <div className="bg-zinc-800 h-[90%] w-[90%] absolute bottom-[-20px] right-[-5px] -z-10"></div>
-        <Image
-          src="/assets/cottonbro.jpg"
-          alt="Cottonbro"
-          width={500}
-          height={800}
-          className="object-cover px-5 mt-6"
-        />
       </div>
     </section>
   );

@@ -29,12 +29,15 @@ export default function Post({ project, moreProjects, preview }: Props) {
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
-    restDelta: 0.001
+    restDelta: 0.001,
   });
 
   return (
     <Layout preview={preview}>
-      <motion.div className="fixed top-0 left-0 right-0 h-2 bg-yellow-300 origin-[0%]" style={{ scaleX }} />
+      <motion.div
+        className="fixed top-0 left-0 right-0 h-2 bg-[#5594b5] origin-[0%]"
+        style={{ scaleX }}
+      />
       <Container>
         <Header type="project" />
         {router.isFallback ? (
@@ -43,9 +46,7 @@ export default function Post({ project, moreProjects, preview }: Props) {
           <>
             <article className="mb-32">
               <Head>
-                <title>
-                  {project.title} | David Blog
-                </title>
+                <title>{project.title} | David Barbier</title>
                 <meta property="og:image" content={project.ogImage.url} />
               </Head>
               <ProjectHeader

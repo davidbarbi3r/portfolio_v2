@@ -18,7 +18,7 @@ function index({ allProjects, allPosts }: Props) {
     <>
       <Layout>
         <Head>
-          <title>Gnark Projects</title>
+          <title>David Barbier</title>
         </Head>
         <Hero />
         <About />

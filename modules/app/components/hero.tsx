@@ -1,22 +1,31 @@
-import Image from "next/image"
-import heroPalm from "../../../public/assets/23062019.jpg"
+import Image from "next/image";
+import mountain from "../../../public/assets/15022022.jpg";
 
 function Hero() {
   return (
-    <section className="relative h-[80vh] sm:h-[55vh] overflow-hidden drop-shadow-xl">
+    <section className="overflow-hidden flex items-center justify-center">
+      <div className="relative w-[85%] sm:w-[80%] md:w-[60%] xl:w-[40%]">
         <Image
-            src={heroPalm}
-            alt="Fougere palm"
-            className="object-cover h-[80vh] sm:h-[55vh] mix-blend-darken"
-            priority
+          src={mountain}
+          alt="Fougere palm"
+          className="object-cover"
+          priority
         />
-        <div className="absolute flex flex-col items-center justify-center h-full w-full bg-zinc-900 bg-opacity-20 text-white bottom-0 backdrop-blur-[2px]">
-            <h2 className="text-2xl sm:text-3xl mb-3 font-semibold text-center mx-auto px-8">Hello</h2>
-            <p className="text-lg sm:text-xl text-center mx-auto px-16">I'm a passionate developer based in Ajaccio, France.</p>
-            <p className="hidden sm:block text-lg sm:text-xl md:max-w-[50%] mx-auto px-16 text-center">I am eager to take on any software development projects, whether they be front-end or back-end, local or remote. My passion for coding drives me to consistently deliver high-quality work</p>
-        </div >
+        <div className="absolute top-[15%] left-8 sm:left-[-10%] flex flex-col items-left sm:items-center sm:w-[120%] font-main">
+          <h2 className="sm:text-[#313d41] text-white sm:whitespace-nowrap text-4xl sm:text-7xl md:text-7xl lg:text-8xl xl:text-8xl sm:text-center
+           dark:text-slate-100">
+            Développeur passionné
+          </h2>
+        </div>
+        <p className="text-center text-xl mt-3">
+          Tout commence par une idée,
+        </p>
+        <p className="text-center text-xl">
+          je peux vous aider à lui faire prendre vie.
+        </p>
+      </div>
     </section>
-  )
+  );
 }
 
-export default Hero
+export default Hero;

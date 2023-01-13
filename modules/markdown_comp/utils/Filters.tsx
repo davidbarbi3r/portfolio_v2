@@ -17,7 +17,7 @@ function Filters({ allFilters, filters, add, remove }: Props) {
 
   return (
     <div className="text-slate-800 dark:text-slate-50 transition-all duration-300">
-        <h2 className="text-xl md:text-2xl font-bold mb-4 text-slate-800 dark:text-slate-50 transition-all">Tags: </h2>
+        <h2 className="text-xl md:text-2xl font-bold mb-4 text-slate-800 dark:text-slate-50 transition-all">Catégories: </h2>
         <div className="flex flex-wrap mb-4">
             {allFilters.map((filter) => (
                 <button

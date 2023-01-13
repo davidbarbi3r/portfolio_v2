@@ -33,7 +33,7 @@ const HeroProject = ({
           </h3>
           <div className="mb-4 md:mb-0 text-lg">
             <DateFormatter dateString={date} /> • 
-          <span className="ml-1 italic text-sm">{readingTime} min read</span>
+          <span className="ml-1 italic text-sm">{readingTime} min lecture</span>
           </div>
         </div>
         <div>

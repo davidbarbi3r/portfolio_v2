@@ -1,17 +1,20 @@
 const Intro = () => {
   return (
-    <section className="flex-col md:flex-row flex items-center md:justify-between mt-16 mb-16 md:mb-12">
+    <section className="flex-col md:flex-row flex items-baseline md:justify-between mt-16 mb-16 md:mb-12">
       <div className='flex items-center'>
         <h1 className="text-4xl md:text-7xl font-bold tracking-tighter leading-tight md:pr-8">
           Blog 
         </h1>
       </div>
       <div>
-        <h2 className="text-center md:text-left text-lg mt-5 md:pl-8">
-          You can find here all the latest news about Gnark, learnings and discovery.
+        <h2 className="text-center md:text-left text-xl mt-5 md:pl-8">
+          Tu trouveras ici tous mes articles, apprentissages et découvertes.
         </h2>
         <p className="text-center md:text-left md:pl-8">
-        I am always exploring new technologies and techniques, and I enjoy sharing my insights and experiences with others. 
+        J'explore toujours de nouvelles technologies et pratiques, 
+        </p>
+        <p className="text-center md:text-left md:pl-8">
+        et apprécie partager et échanger avec d'autres développeurs. 
         </p>
       </div>
     </section>

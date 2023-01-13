@@ -30,18 +30,20 @@ const PostPreview = ({
 
   return (
     <div>
-      <div className="mb-5">
-        <CoverImage slug={slug} title={title} src={coverImage} />
+      <div className="group">
+        <div className="mb-5">
+          <CoverImage slug={slug} title={title} src={coverImage} />
+        </div>
+        <h3 className="text-3xl mb-3 leading-snug">
+          <Link
+            as={`/blog/posts/${slug}`}
+            href="/blog/posts/[slug]"
+            className="group-hover:underline"
+          >
+            {title}
+          </Link>
+        </h3>
       </div>
-      <h3 className="text-3xl mb-3 leading-snug">
-        <Link
-          as={`/blog/posts/${slug}`}
-          href="/blog/posts/[slug]"
-          className="hover:underline"
-        >
-          {title}
-        </Link>
-      </h3>
       <div className="mt-[-10px] mb-2">
         {themes.map((theme) => (
           <span
@@ -54,7 +56,7 @@ const PostPreview = ({
       </div>
       <div className="text-lg mb-4">
         <DateFormatter dateString={date} /> • 
-          <span className="ml-1 italic text-sm">{readingTime} min read</span>
+          <span className="ml-1 italic text-sm">{readingTime} min lecture</span>
       </div>
       <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
       <Avatar name={author.name} picture={author.picture} />

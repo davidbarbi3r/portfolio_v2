@@ -45,7 +45,7 @@ allPosts = allPosts.filter((post) => {
     <>
       <Layout>
         <Head>
-          <title>Gnark Blog</title>
+          <title>David Barbier | Blog</title>
         </Head>
         <Container>
           <Intro />

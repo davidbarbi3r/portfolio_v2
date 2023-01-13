@@ -43,7 +43,7 @@ allProjects = allProjects.filter((project) => {
     <>
       <Layout>
         <Head>
-          <title>Gnark Blog</title>
+          <title>David Barbier | Projets</title>
         </Head>
         <Container>
           <Intro />

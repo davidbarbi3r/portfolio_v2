@@ -1,14 +1,14 @@
 ---
 title: 'Self host your projects with the Raspberry Pi'
 excerpt: 'Self host at home with SSL encryption, containers and load balancer [tutorial for beginers]'
-coverImage: '/assets/blog/raspberry-self-hosting/raspi.png'
+coverImage: '/assets/blog/raspberry-self-hosting/printedboard.jpg'
 themes: ["Deployement", "Raspberry", "Docker"]
 date: '2023-01-03T05:35:07.322Z'
 author:
   name: Gnark
   picture: '/assets/blog/authors/gnark.jpg'
 ogImage:
-  url: '/assets/blog/raspberry-self-hosting/raspi.png'
+  url: '/assets/blog/raspberry-self-hosting/printedboard.jpg'
 ---
 
 Hi all, hosting your backend on Heroku is not free anymore.

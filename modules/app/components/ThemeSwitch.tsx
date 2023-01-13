@@ -16,7 +16,7 @@ function ThemeSwitch() {
       <button
         aria-label="Toggle Dark Mode"
         type="button"
-        className="w-10 h-10 ml-3 rounded dark:bg-zinc-700 dark:hover:bg-zinc-600 hover:bg-slate-100"
+        className="w-10 h-10 ml-3 rounded hover:bg-slate-100 dark:hover:text-[#397497]"
         onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
       >
         {theme === "dark" ? <LightModeIcon /> : <DarkModeIcon />}

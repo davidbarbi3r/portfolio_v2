@@ -12,9 +12,9 @@ const Layout = ({ preview, children }: Props) => {
   return (
     <Providers>
       <Meta />
-      <div>
+      <div className="bg-white text-[#313d41] dark:text-slate-100" >
       <Navbar/>
-        <main className="overflow-hidden dark:bg-zinc-800 transition-all duration-300">
+        <main className="overflow-hidden dark:bg-[#01375b] transition-all duration-300 font-text">
           {children}
         </main>
       </div>

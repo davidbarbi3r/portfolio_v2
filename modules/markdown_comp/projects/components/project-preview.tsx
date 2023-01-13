@@ -33,7 +33,7 @@ const ProjectPreview = ({
         {techs.map((tech) => (
           <span
             key={tech}
-            className="text-xs md:text-sm mr-2 bg-slate-200 py-1 px-2 rounded-lg font-bold shadow-md"
+            className="text-xs md:text-sm mr-2 text-slate-800 bg-slate-200 py-1 px-2 rounded-lg font-bold shadow-md"
           >
             {tech}
           </span>
@@ -41,7 +41,7 @@ const ProjectPreview = ({
       </div>
       <div className="text-lg mb-4">
         <DateFormatter dateString={date} /> • 
-        <span className="ml-1 italic text-sm">{readingTime} min read</span>
+        <span className="ml-1 italic text-sm">{readingTime} min lecture</span>
       </div>
       <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
     </div>

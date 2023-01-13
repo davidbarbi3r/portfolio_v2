@@ -11,10 +11,10 @@ function Navbar() {
 
 
   return (
-    <header className='shadow-sm border-b-[1px] dark:bg-zinc-800 transition-all duration-300'>
-        <div className='py-3 flex justify-between items-center container mx-auto px-5 border-'>
+    <header className='dark:bg-[#01375b] transition-all duration-300 p-3'>
+        <div className='py-3 flex justify-between items-baseline container mx-auto px-5 border-'>
             <Link href='/'>
-                <div className='flex items-center'>
+                <div className='flex items-baseline'>
                     {/* <Image
                         className='rounded-full md:object-cover max-w-[60px] max-h-[60px] object-contain mr-3'
                         src="/assets/blog/authors/gnark.jpg"
@@ -22,28 +22,28 @@ function Navbar() {
                         width={100}
                         height={100}
                     /> */}
-                    <h1 className="text-3xl font-bold">David Barbi3r</h1>
+                    <h1 className="text-3xl font-main">David Barbier</h1>
                 </div>
             </Link>
             <nav className='flex'>
-                <div className='flex items-center'>
+                <div className='flex items-baseline'>
                     <div className="hidden sm:block">
-                        <ul className='flex items-center font-bold'>
+                        <ul className='flex font-main items-baseline'>
                             <a href='/' className='p-2 py-4'>
                             <li className='text-center'>
-                                HOME
+                                Accueil
                             </li>
                             </a>
-                            <span className='bg-black dark:bg-white h-[1px] w-5 rotate-90'></span>
+                            {/* <span className='bg-black dark:bg-white h-[1px] w-5 rotate-90'></span> */}
                             <a href='/projects' className='p-2 py-4'>
                                 <li className='text-center'>
-                                    PROJECTS
+                                    Projets
                                 </li>
                             </a>
-                            <span className='bg-black dark:bg-white h-[1px] w-5 rotate-90'></span>
+                            {/* <span className='bg-black dark:bg-white h-[1px] w-5 rotate-90'></span> */}
                             <a href='/blog' className='p-2 py-4'>
                             <li className='text-center'>
-                                BLOG
+                                Blog
                             </li>
                             </a>
                         </ul>
