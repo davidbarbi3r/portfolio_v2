@@ -5,7 +5,9 @@
     "index.hero.title": "Passionate developer",
     "index.hero.subtitle1": "All start with an idea,",
     "index.hero.subtitle2": "I can help you making your idea live.",
-    "index.hero.presentation": "I'm a freelance web developer that loves provide solutions and see ideas become real. I care a lot about conception and user experience.",
-    "index.hero.button1": "Projects",
-    "index.hero.button2": "Articles"
+    "index.about.presentation": "I'm a freelance web developer that loves provide solutions and see ideas become real. I care a lot about conception and user experience.",
+    "index.about.button1": "Projects",
+    "index.about.button2": "Articles",
+    "index.last.project": "Last project",
+    "index.last.blog": "Last post"
 }

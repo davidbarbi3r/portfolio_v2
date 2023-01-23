@@ -4,6 +4,7 @@ import Image from "next/image";
 import DateFormatter from "../utils/date-formatter";
 import Link from "next/link";
 import getReadingTime from "../../markdown_comp/utils/getAverageTime";
+import { FormattedMessage } from "react-intl";
 
 type Props = {
   lastProject: Project;
@@ -19,7 +20,7 @@ function lastOnes({ lastProject, lastPost }: Props) {
       <div className="container flex flex-col mx-auto md:flex-row justify-between my-8">
         <div className="flex flex-col w-full md:w-1/2 px-4">
           <h2 className="my-8 text-2xl md:text-3xl font-bold tracking-tighter leading-tight text-center">
-            Dernier projet
+            <FormattedMessage id="index.last.project" defaultMessage="Last Project"></FormattedMessage>
           </h2>
             <div className="group">
               <div className="overflow-hidden">
@@ -53,7 +54,7 @@ function lastOnes({ lastProject, lastPost }: Props) {
         </div>
         <div className="flex flex-col w-full md:w-1/2 px-4">
           <h2 className="my-8 text-2xl md:text-3xl font-bold tracking-tighter leading-tight text-center">
-            Dernier Article
+            <FormattedMessage id="index.last.blog" defaultMessage="Last post"></FormattedMessage>
           </h2>
           <div className="group">
             <div className="overflow-hidden">
