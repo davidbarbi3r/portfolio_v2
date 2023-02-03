@@ -43,7 +43,6 @@ const ProjectPreview = ({
         <DateFormatter dateString={date} /> • 
         <span className="ml-1 italic text-sm">{readingTime} min lecture</span>
       </div>
-      <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
     </div>
   );
 };
