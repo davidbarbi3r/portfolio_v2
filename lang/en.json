@@ -9,5 +9,11 @@
     "index.about.button1": "Projects",
     "index.about.button2": "Articles",
     "index.last.project": "Last project",
-    "index.last.blog": "Last post"
+    "index.last.blog": "Last post",
+    "projects.intro.welcome1": "Welcome on this portfolio projects page!",
+    "projects.intro.welcome2": "Here you can find only projects made with love.",
+    "projects.intro.welcome3": "My faithful ally to carry on projects is: ",
+    "blog.intro.welcome1": "Here you will find all my articles, learnings and discoveries.",
+    "blog.intro.welcome2": "I always explore new technologies and practices,",
+    "blog.intro.welcome3": "and enjoys sharing and exchanging with other developers."
 }

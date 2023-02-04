@@ -16,7 +16,7 @@ function lastOnes({ lastProject, lastPost }: Props) {
   const postReadingTime = getReadingTime(lastPost.content);
 
   return (
-    <section className="mt-8 bg-[#dee7eb] dark:bg-[#001828] pb-2">
+    <section className="mt-8 bg-[#d9e3e7] dark:bg-[#001828] pb-2">
       <div className="container flex flex-col mx-auto md:flex-row justify-between my-8">
         <div className="flex flex-col w-full md:w-1/2 px-4">
           <h2 className="my-8 text-2xl md:text-3xl font-bold tracking-tighter leading-tight text-center">

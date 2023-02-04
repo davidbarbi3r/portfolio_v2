@@ -24,7 +24,7 @@ const ProjectPreview = ({
         <Link
           as={`/projects/${slug}`}
           href="/projects/[slug]"
-          className="hover:underline"
+          className="hover:underline font-main"
         >
           {title}
         </Link>

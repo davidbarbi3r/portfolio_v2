@@ -9,5 +9,11 @@
     "index.about.projects": "Projets",
     "index.about.blog": "Blog",
     "index.last.project": "Dernier projet",
-    "index.last.blog": "Dernier article"
+    "index.last.blog": "Dernier article",
+    "projects.intro.welcome1": "Bienvenue sur la page projets du portfolio!",
+    "projects.intro.welcome2": "Sur cette page du trouveras les projets que j'ai réalisé avec amour.",
+    "projects.intro.welcome3": "Mon fidèle allié pour réaliser les projets est:",
+    "blog.intro.welcome1": "Tu trouveras ici tous mes articles, apprentissages et découvertes.",
+    "blog.intro.welcome2": "J'explore toujours de nouvelles technologies et pratiques,",
+    "blog.intro.welcome3": "et apprécie partager et échanger avec d'autres développeurs."
 }
