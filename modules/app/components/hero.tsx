@@ -8,8 +8,9 @@ function Hero() {
       <div className="relative w-[95%] sm:w-[80%] md:w-[60%] xl:w-[40%]">
         <Image
           src={mountain}
-          alt="Fougere palm"
+          alt="Alps mountain"
           className="object-cover"
+          sizes="95vw, (min-width: 768px) 80vw, (min-width: 1024px) 60vw, (min-width: 1280px) 40vw"
           priority
         />
         <div className="absolute top-[15%] left-8 sm:left-[-10%] flex flex-col items-left sm:items-center sm:w-[120%] font-main">

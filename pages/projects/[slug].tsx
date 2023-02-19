@@ -20,6 +20,8 @@ type Props = {
 
 export default function Post({ project, moreProjects, preview }: Props) {
   const router = useRouter();
+  console.log(moreProjects);
+
   if (!router.isFallback && !project?.slug) {
     return <ErrorPage statusCode={404} />;
   }
@@ -68,18 +70,15 @@ type Params = {
   params: {
     slug: string;
   };
+  locale;
 };
 
-export async function getStaticProps({ params }: Params) {
-  const project = getProjectBySlug(params.slug, [
-    "title",
-    "date",
-    "slug",
-    "techs",
-    "content",
-    "ogImage",
-    "coverImage",
-  ]);
+export async function getStaticProps({ params, locale }: Params) {
+  const project = getProjectBySlug(
+    params.slug,
+    ["title", "date", "slug", "techs", "content", "ogImage", "coverImage"],
+    locale
+  );
   const content = await markdownToHtml(project.content || "");
 
   return {
@@ -92,17 +91,20 @@ export async function getStaticProps({ params }: Params) {
   };
 }
 
-export async function getStaticPaths() {
+export async function getStaticPaths({ locales }) {
   const projects = getAllProjects(["slug"]);
 
   return {
-    paths: projects.map((project) => {
-      return {
-        params: {
-          slug: project.slug,
-        },
-      };
-    }),
+    paths: locales!.flatMap((locale) =>
+      projects.map((project) => {
+        return {
+          params: {
+            slug: project.slug,
+          },
+          locale,
+        };
+      })
+    ),
     fallback: false,
   };
 }

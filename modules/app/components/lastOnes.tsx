@@ -37,12 +37,12 @@ function lastOnes({ lastProject, lastPost }: Props) {
               <div className="flex flex-col">
                 <div className="flex flex-col">
                   <h3 className="mb-0 text-xl lg:text-2xl leading-tight mt-4">
-                    <a
+                    <Link
                       href={`/projects/${lastProject.slug}`}
                       className="group-hover:underline"
                     >
                       {lastProject.title}
-                    </a>
+                    </Link>
                   </h3>
                   <div className="mb-4 text-lg">
                     <DateFormatter dateString={lastProject.date} /> • 
@@ -58,7 +58,7 @@ function lastOnes({ lastProject, lastPost }: Props) {
           </h2>
           <div className="group">
             <div className="overflow-hidden">
-              <Link as={`/blog/posts/${lastPost.slug}`} href="/blog/posts/[slug]">
+              <Link as={`/blog/${lastPost.slug}`} href="/blog/[slug]">
                 <Image
                   src={lastPost.coverImage}
                   alt={lastPost.title}
@@ -71,12 +71,12 @@ function lastOnes({ lastProject, lastPost }: Props) {
             <div className="flex flex-col">
               <div className="flex flex-col">
                 <h3 className="mb-0 text-xl lg:text-2xl leading-tight mt-4">
-                  <a
-                    href={`/blog/posts/${lastPost.slug}`}
+                  <Link
+                    href={`/blog/${lastPost.slug}`}
                     className="group-hover:underline"
                   >
                     {lastPost.title}
-                  </a>
+                  </Link>
                 </h3>
                 <div className="mb-4 text-lg">
                   <DateFormatter dateString={lastPost.date} /> • 

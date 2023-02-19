@@ -5,6 +5,7 @@ type Props = {
     children: React.ReactNode;
   };
 
+
 function Providers({ children }: Props) {
   return (
     <ThemeProvider enableSystem={true} attribute="class">

@@ -9,13 +9,15 @@ import Post from "../../modules/markdown_comp/blog/interfaces/post";
 import removeDuplicates from "../../modules/markdown_comp/utils/removeDuplicate";
 import { useState } from "react";
 import Filters from "../../modules/markdown_comp/utils/Filters";
+import { useRouter } from "next/router";
 
 type Props = {
   allPosts: Post[];
 };
 
 export default function Blog({ allPosts }: Props) {
-
+  const router = useRouter();
+  const lang = router.locale;
   const allFilters = removeDuplicates([...allPosts.map((post) => post.themes).flat()]);
   
   const [filters, setFilters] = useState<string[]>([]);
@@ -30,13 +32,13 @@ export default function Blog({ allPosts }: Props) {
     }
   }
 
-allPosts = allPosts.filter((post) => {
-  if (filters.length === 0) {
-    return post
-  } else {
-    return post.themes.some((tech) => filters.includes(tech))
-  }
-})
+  allPosts = allPosts.filter((post) => {
+    if (filters.length === 0) {
+      return post
+    } else {
+      return post.themes.some((tech) => filters.includes(tech))
+    }
+  })
 
 
   const heroPost = allPosts[0];
@@ -70,7 +72,7 @@ allPosts = allPosts.filter((post) => {
   );
 }
 
-export const getStaticProps = async () => {
+export const getStaticProps = async ({locale}) => {
   const allPosts = getAllPosts([
     "title",
     "date",
@@ -80,7 +82,7 @@ export const getStaticProps = async () => {
     "excerpt",
     "themes",
     "content"
-  ]);
+  ], locale);
 
   return {
     props: { allPosts },

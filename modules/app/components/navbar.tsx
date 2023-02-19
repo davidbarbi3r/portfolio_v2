@@ -2,17 +2,10 @@ import Link from "next/link";
 import ThemeSwitch from "./ThemeSwitch";
 import CloseIcon from "@mui/icons-material/Close";
 import { useState } from "react";
-import gsap from "gsap";
 import { FormattedMessage } from "react-intl";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-
-  const onOpen = ({currentTarget}) => {
-    gsap.to(currentTarget, {scale: 1.1, duration: 0.2})};
-
-  const onClose = ({currentTarget}) => {
-    gsap.to(currentTarget, {scale: 0, duration: 0.2})};
 
   return (
     <header className="dark:bg-[#01375b] transition-all duration-300 p-3">
@@ -33,18 +26,18 @@ function Navbar() {
           <div className="flex items-baseline">
             <div className="hidden sm:block">
               <ul className="flex font-main items-baseline">
-                <a href="/" className="p-2 py-4">
+                <Link href="/" className="p-2 py-4">
                   <li className="text-center"><FormattedMessage id="index.navbar.div1" defaultMessage="Home" key="index.navbar.div1"></FormattedMessage></li>
-                </a>
-                <a href="/projects" className="p-2 py-4">
+                </Link>
+                <Link href="/projects" className="p-2 py-4">
                   <li className="text-center"><FormattedMessage id="index.navbar.div2" defaultMessage="Projects" key="index.navbar.div2"></FormattedMessage></li>
-                </a>
-                <a href="/blog" className="p-2 py-4">
+                </Link>
+                <Link href="/blog" className="p-2 py-4">
                   <li className="text-center"><FormattedMessage id="index.navbar.div3" defaultMessage="Blog"></FormattedMessage></li>
-                </a>
+                </Link>
               </ul>
             </div>
-            <ThemeSwitch />
+            {/* <ThemeSwitch /> */}
           </div>
           <div className="sm:hidden">
             <button
@@ -99,24 +92,24 @@ function Navbar() {
             onClick={() => setIsOpen(prev => !prev)}
           />
           <div className="px-2 pt-2 pb-3 space-y-8 h-full flex flex-col items-center justify-center text-left text-3xl font-main font-bold w-full">
-            <a
+            <Link
               href="/"
               className="block px-3 py-2 rounded-md text-gray-600 hover:text-white hover:bg-gray-700"
             >
               Accueil
-            </a>
-            <a
+            </Link>
+            <Link
               href="/projects"
               className="block px-3 py-2 rounded-md text-gray-600 hover:text-white hover:bg-gray-700"
             >
               Projets
-            </a>
-            <a
+            </Link>
+            <Link
               href="/blog"
               className="block px-3 py-2 rounded-md text-gray-600 hover:text-white hover:bg-gray-700"
             >
               Blog
-            </a>
+            </Link>
           </div>
         </div>
       )}

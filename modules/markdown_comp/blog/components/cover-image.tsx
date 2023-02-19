@@ -26,7 +26,7 @@ const CoverImage = ({ title, src, slug, tags }: Props) => {
     <div className="sm:mx-0">
       {slug ? (
       <div className='relative overflow-hidden'>
-        <Link as={`/blog/posts/${slug}`} href="/blog/posts/[slug]" aria-label={title}>
+        <Link as={`/blog/${slug}`} href="/blog/[slug]" aria-label={title}>
           {image}
         </Link>
         <div className='absolute bottom-2 flex flex-wrap px-3 py-1 rounded-lg w-full font-bold'>

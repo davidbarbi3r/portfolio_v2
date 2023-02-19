@@ -4,13 +4,14 @@ import matter from 'gray-matter'
 
 const projectsDirectory = join(process.cwd(), '_projects')
 
-export function getProjectSlugs() {
-  return fs.readdirSync(projectsDirectory)
+export function getProjectSlugs(locale: string = 'en') {
+  return fs
+          .readdirSync(join(projectsDirectory, `${locale}`))
 }
 
-export function getProjectBySlug(slug: string, fields: string[] = []) {
+export function getProjectBySlug(slug: string, fields: string[] = [], locale: string = 'en') {
   const realSlug = slug.replace(/\.md$/, '')
-  const fullPath = join(projectsDirectory, `${realSlug}.md`)
+  const fullPath = join(projectsDirectory, `${locale}`, `${realSlug}.md`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
   const { data, content } = matter(fileContents)
 
@@ -37,12 +38,13 @@ export function getProjectBySlug(slug: string, fields: string[] = []) {
   return items
 }
 
-export function getAllProjects(fields: string[] = []) {
+export function getAllProjects(fields: string[] = [], locale: string = 'en') {
   const slugs = getProjectSlugs()
   const projects = slugs
-    .map((slug) => getProjectBySlug(slug, fields))
+    .map((slug) => getProjectBySlug(slug, fields, locale))
     // sort projects by date in descending order
     .sort((project1, project2) => (project1.date > project2.date ? -1 : 1))
     console.log(projects)
-    return projects
+  return projects
 }
+

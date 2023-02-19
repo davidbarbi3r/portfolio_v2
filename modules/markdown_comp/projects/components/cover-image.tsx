@@ -19,6 +19,7 @@ const CoverImage = ({ title, src, slug, tags }: Props) => {
       })}
       width={1300}
       height={630}
+      sizes="(max-width: 768px) 100vw, 768px"
       priority
     />
   )

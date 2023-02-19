@@ -9,6 +9,7 @@ import { getAllProjects } from "../../lib/projectApi";
 import { useState } from "react";
 import Filters from "../../modules/markdown_comp/utils/Filters";
 import removeDuplicates from "../../modules/markdown_comp/utils/removeDuplicate";
+import { useRouter } from "next/router";
 
 type Props = {
   allProjects: Project[];
