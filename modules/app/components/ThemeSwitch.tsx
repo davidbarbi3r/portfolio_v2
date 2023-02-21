@@ -1,8 +1,6 @@
 "use client";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-import LightModeIcon from "@mui/icons-material/LightMode";
-import DarkModeIcon from "@mui/icons-material/DarkMode";
 
 function ThemeSwitch() {
   const [mounted, setMounted] = useState(false);
@@ -19,7 +17,7 @@ function ThemeSwitch() {
         className="w-10 h-10 ml-3 rounded hover:bg-slate-100 dark:hover:text-[#397497]"
         onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
       >
-        {theme === "dark" ? <LightModeIcon /> : <DarkModeIcon />}
+        {/* {theme === "dark" ? <LightModeIcon /> : <DarkModeIcon />} */}
       </button>
     </div>
   );

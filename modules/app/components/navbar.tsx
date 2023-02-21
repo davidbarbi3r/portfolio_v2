@@ -1,6 +1,7 @@
 import Link from "next/link";
+import Image from "next/image";
 import ThemeSwitch from "./ThemeSwitch";
-import CloseIcon from "@mui/icons-material/Close";
+import CloseIcon from "../../../public/assets/icons/close-outline.svg"
 import { useState } from "react";
 import { FormattedMessage } from "react-intl";
 
@@ -87,9 +88,11 @@ function Navbar() {
           className="sm:hidden min-w-full h-full fixed bg-white shadow-md z-10 left-0 top-0"
           id="mobile-menu"
         >
-          <CloseIcon
-            className="absolute top-8 right-8 text-3xl hover:cursor-pointer hover:bg-gray-700 rounded-md hover:text-white"
-            onClick={() => setIsOpen(prev => !prev)}
+          <Image 
+            src="/assets/icons/close-outline.svg" 
+            alt="cross button" width={30} height={30}
+            className="absolute top-8 right-8 text-3xl hover:cursor-pointer rounded-md hover:scale-125"
+            onClick={() => setIsOpen(prev => !prev)}  
           />
           <div className="px-2 pt-2 pb-3 space-y-8 h-full flex flex-col items-center justify-center text-left text-3xl font-main font-bold w-full">
             <Link
