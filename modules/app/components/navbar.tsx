@@ -1,28 +1,21 @@
 import Link from "next/link";
-import Image from "next/image";
-import ThemeSwitch from "./ThemeSwitch";
-import CloseIcon from "../../../public/assets/icons/close-outline.svg"
 import { useState } from "react";
 import { FormattedMessage } from "react-intl";
+import ThemeSwitch from "./ThemeSwitch";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <header className="dark:bg-[#01375b] transition-all duration-300 p-3">
-      <div className="py-3 flex justify-between items-baseline container mx-auto px-5 border-">
-        <Link href="/">
-          <div className="flex items-baseline">
-            {/* <Image
-                        className='rounded-full md:object-cover max-w-[60px] max-h-[60px] object-contain mr-3'
-                        src="/assets/blog/authors/gnark.jpg"
-                        alt='Gnark Logo'
-                        width={100}
-                        height={100}
-                    /> */}
+      <div className="py-3 flex justify-between container mx-auto px-5 border-">
+        <Link href="/" className="flex">
+          <div className="flex self-center">
             <h1 className="text-3xl font-main">David Barbier</h1>
           </div>
         </Link>
+                    <ThemeSwitch />
+
         <nav className="flex">
           <div className="flex items-baseline">
             <div className="hidden sm:block">
@@ -38,11 +31,10 @@ function Navbar() {
                 </Link>
               </ul>
             </div>
-            {/* <ThemeSwitch /> */}
           </div>
           <div className="sm:hidden">
             <button
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+              className="inline-flex items-center justify-center p-2 pr-0 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
               aria-controls="mobile-menu"
               aria-expanded="false"
               onClick={() => setIsOpen(prev => !prev)}
@@ -88,12 +80,15 @@ function Navbar() {
           className="sm:hidden min-w-full h-full fixed bg-white shadow-md z-10 left-0 top-0"
           id="mobile-menu"
         >
-          <Image 
-            src="/assets/icons/close-outline.svg" 
-            alt="cross button" width={30} height={30}
-            className="absolute top-8 right-8 text-3xl hover:cursor-pointer rounded-md hover:scale-125"
-            onClick={() => setIsOpen(prev => !prev)}  
-          />
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"  className="absolute top-8 right-8 text-3xl hover:cursor-pointer rounded-md hover:scale-125"
+            onClick={() => setIsOpen(prev => !prev)}  >
+            <mask id="mask0_109_7" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+            <rect width="24" height="24" fill="#D9D9D9"/>
+            </mask>
+            <g mask="url(#mask0_109_7)">
+            <path d="M6.4 19L5 17.6L10.6 12L5 6.4L6.4 5L12 10.6L17.6 5L19 6.4L13.4 12L19 17.6L17.6 19L12 13.4L6.4 19Z" fill="#848484"/>
+            </g>
+          </svg>
           <div className="px-2 pt-2 pb-3 space-y-8 h-full flex flex-col items-center justify-center text-left text-3xl font-main font-bold w-full">
             <Link
               href="/"

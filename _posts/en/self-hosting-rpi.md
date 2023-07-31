@@ -11,6 +11,7 @@ ogImage:
   url: '/assets/blog/raspberry-self-hosting/printedboard.jpg'
 ---
 
+en
 Hi all, hosting your backend on Heroku is not free anymore.
 
 It’s great because it’ll sharpen our skills, let’s do one of my favorite projects: self-host your backend at home on a tiny Raspberry Pi (RPI). Of course, you can host much more on it like a front-end or a database… Let me explain how 🧶
