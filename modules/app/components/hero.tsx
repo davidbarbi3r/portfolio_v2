@@ -16,7 +16,7 @@ function Hero() {
         <div className="absolute top-[15%] left-8 sm:left-[-10%] flex flex-col items-left sm:items-center sm:w-[120%] font-main">
           <h2 className="sm:text-main-text text-white sm:whitespace-nowrap text-4xl sm:text-7xl md:text-7xl lg:text-8xl xl:text-8xl sm:text-center
            dark:text-slate-100">
-            <FormattedMessage id="index.hero.title" defaultMessage="Passionate developer"></FormattedMessage>
+            <FormattedMessage id="index.hero.title" defaultMessage="Fullstack developer"></FormattedMessage>
           </h2>
         </div>
         <p className="text-center text-xl mt-3">
@@ -24,6 +24,9 @@ function Hero() {
         </p>
         <p className="text-center text-xl">
         <FormattedMessage id="index.hero.subtitle2" defaultMessage="I can help you making your idea live."></FormattedMessage>
+        </p>
+        <p>
+        <FormattedMessage id="index.hero.subtitle3" defaultMessage=""></FormattedMessage>
         </p>
       </div>
     </section>
