@@ -3,6 +3,7 @@ import davidCafe from "../../../public/assets/david-cafe-light.svg";
 import davidCafeEye from "../../../public/assets/david-cafe-eye.svg";
 import userInterfaceIcon from "../../../public/assets/user-interface-icon.svg";
 import { FormattedMessage } from "react-intl";
+import ScrollImage from "./ScrollImage";
 
 function Hero() {
   return (
@@ -18,14 +19,8 @@ function Hero() {
           <p className="sm:text-center text-xl">
             <FormattedMessage id="index.hero.subtitle2" defaultMessage="I can help you making your idea live."></FormattedMessage>
           </p>
-          <Image
-              src={userInterfaceIcon}
-              alt="An UI icon"
-              className="absolute bottom-0 -left-[5em] lg:-left-2 -rotate-12 hidden xl:block"
-              height={150}
-              width={150}
-              priority
-          />
+          <ScrollImage image={userInterfaceIcon.src} width={150} height={150} Y={1}/>
+
         </div>
         <div className="relative h-[60vh] w-1/2 md:h-[90vh]">
         <Image
