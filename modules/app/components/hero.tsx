@@ -1,33 +1,47 @@
 import Image from "next/image";
-import mountain from "../../../public/assets/15022022.jpg";
+import davidCafe from "../../../public/assets/david-cafe-light.svg";
+import davidCafeEye from "../../../public/assets/david-cafe-eye.svg";
+import userInterfaceIcon from "../../../public/assets/user-interface-icon.svg";
 import { FormattedMessage } from "react-intl";
 
 function Hero() {
   return (
-    <section className="overflow-hidden flex items-center justify-center">
-      <div className="relative w-[95%] sm:w-[80%] md:w-[60%] xl:w-[40%]">
-        <Image
-          src={mountain}
-          alt="Alps mountain"
-          className="object-cover"
-          sizes="95vw, (min-width: 768px) 80vw, (min-width: 1024px) 60vw, (min-width: 1280px) 40vw"
-          priority
-        />
-        <div className="absolute top-[15%] left-8 sm:left-[-10%] flex flex-col items-left sm:items-center sm:w-[120%] font-main">
-          <h2 className="sm:text-main-text text-white sm:whitespace-nowrap text-4xl sm:text-7xl md:text-7xl lg:text-8xl xl:text-8xl sm:text-center
-           dark:text-slate-100">
-            <FormattedMessage id="index.hero.title" defaultMessage="Fullstack developer"></FormattedMessage>
+    <section className="overflow-hidden flex flex-col items-center justify-center">
+      <div className="flex font-main items-center justify-center xl:ml-8">
+        <div className="h-fit relative w-3/5 ml-5 lg:ml-8 flex-grow">
+          <h2 className="dark:text-slate-100 sm:text-center text-3xl md:text-7xl lg:text-8xl h-2/5 leading-[0.85em]">
+            <FormattedMessage id="index.hero.title" defaultMessage="Passionate Fullstack developer"></FormattedMessage>
           </h2>
+          <p className="sm:text-center text-xl mt-3">
+            <FormattedMessage id="index.hero.subtitle1" defaultMessage="All start with an idea"></FormattedMessage>
+          </p>
+          <p className="sm:text-center text-xl">
+            <FormattedMessage id="index.hero.subtitle2" defaultMessage="I can help you making your idea live."></FormattedMessage>
+          </p>
+          <Image
+              src={userInterfaceIcon}
+              alt="An UI icon"
+              className="absolute bottom-0 -left-[5em] lg:-left-2 -rotate-12 hidden xl:block"
+              height={150}
+              width={150}
+              priority
+          />
         </div>
-        <p className="text-center text-xl mt-3">
-        <FormattedMessage id="index.hero.subtitle1" defaultMessage="All start with an idea"></FormattedMessage>       
-        </p>
-        <p className="text-center text-xl">
-        <FormattedMessage id="index.hero.subtitle2" defaultMessage="I can help you making your idea live."></FormattedMessage>
-        </p>
-        <p>
-        <FormattedMessage id="index.hero.subtitle3" defaultMessage=""></FormattedMessage>
-        </p>
+        <div className="relative h-[60vh] w-1/2 md:h-[90vh]">
+        <Image
+            src={davidCafe}
+            alt="A digital illustration of David Barbier"
+            className="overflow-visible absolute -right-10 object-cover md:object-fill h-[60vh] md:h-[90vh] text-main-text hover:opacity-0"
+            sizes="95vh, (min-width: 768px) 80vh, (min-width: 1024px) 60vh, (min-width: 1280px) 40vh"
+            priority
+        />
+        <Image
+            src={davidCafeEye}
+            alt="A digital illustration of David Barbier"
+            className="overflow-visible absolute -right-10 object-cover md:object-fill h-[60vh] md:h-[90vh] text-main-text opacity-0 hover:opacity-100"
+            sizes="95vh, (min-width: 768px) 80vh, (min-width: 1024px) 60vh, (min-width: 1280px) 40vh"
+        />
+        </div>
       </div>
     </section>
   );
