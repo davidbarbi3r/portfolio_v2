@@ -3,20 +3,19 @@ import { useState } from "react";
 import { FormattedMessage } from "react-intl";
 import ThemeSwitch from "./ThemeSwitch";
 import {useTheme} from "next-themes";
+import LangSwitch from "./LangSwitch";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const { theme } = useTheme();
   return (
     <header className="dark:bg-[#01375b] transition-all duration-300 p-3">
-      <div className="py-3 flex justify-between container mx-auto px-5 border-">
+      <div className="py-3 flex justify-between container mx-auto px-5">
         <Link href="/" className="flex">
           <div className="flex self-center">
-            <h1 className="text-3xl font-main">David Barbier</h1>
+            <h1 className="text-2xl sm:text-3xl font-main">David Barbier</h1>
           </div>
         </Link>
-                    <ThemeSwitch />
-
         <nav className="flex">
           <div className="flex items-baseline">
             <div className="hidden sm:block">
@@ -30,6 +29,7 @@ function Navbar() {
                 <Link href="/blog" className="p-2 py-4 text-xl hover:text-[#85b5d2]">
                   <li className="text-center"><FormattedMessage id="index.navbar.div3" defaultMessage="Blog"></FormattedMessage></li>
                 </Link>
+                <LangSwitch/>
               </ul>
             </div>
           </div>
@@ -75,6 +75,7 @@ function Navbar() {
           </div>
         </nav>
       </div>
+      <div className="w-5/6 border-b-2 mx-auto"></div>
 
       {isOpen && (
         <div
@@ -98,19 +99,19 @@ function Navbar() {
               href="/"
               className="block px-3 py-2 rounded-md text-gray-600 hover:text-white hover:bg-gray-700"
             >
-              Accueil
+              <FormattedMessage id="index.navbar.div1" defaultMessage="Home" key="index.navbar.div1"></FormattedMessage>
             </Link>
             <Link
               href="/projects"
               className="block px-3 py-2 rounded-md text-gray-600 hover:text-white hover:bg-gray-700"
             >
-              Projets
+              <FormattedMessage id="index.navbar.div2" defaultMessage="Projects" key="index.navbar.div2"></FormattedMessage>
             </Link>
             <Link
               href="/blog"
               className="block px-3 py-2 rounded-md text-gray-600 hover:text-white hover:bg-gray-700"
             >
-              Blog
+              <FormattedMessage id="index.navbar.div3" defaultMessage="Blog"></FormattedMessage>
             </Link>
           </div>
         </div>
