@@ -13,8 +13,9 @@ function Custom404() {
                     <h1 className="mx-auto text-4xl font-main">
                         <FormattedMessage defaultMessage={"404 - There's nothing to see here"} id="404.title" />
                     </h1>
-
-                    <button onClick={() => back()} className="font-text">
+                    <button
+                        onClick={() => back()}
+                        className="font-text mt-5 text-center p-3 text-slate-100 hover:text-zinc-800 bg-[#122530] dark:hover:bg-slate-100 transition-all duration-200 hover:bg-slate-100 block border-zinc-800 border w-[140px]">
                         <FormattedMessage defaultMessage={"Go back"} id="404.button" />
                     </button>
                 </div>
