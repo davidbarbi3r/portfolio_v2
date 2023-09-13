@@ -8,7 +8,7 @@ function About() {
         <h2 className="text-xl font-main sm:text-3xl mb-3 text-center font-semibold mx-auto max-w-6xl">
           <FormattedMessage id="index.about.presentation" defaultMessage={"I'm a freelance web developer that loves provide solutions and see ideas become real. I care a lot about conception and user experience."}></FormattedMessage>
         </h2>
-        <div className="flex items-center flex-col md:flex-row max-w-[450px] m-auto justify-between">
+       {/* <div className="flex items-center flex-col md:flex-row max-w-[450px] m-auto justify-between">
           <div>
             <Link
               href="/projects"
@@ -31,7 +31,7 @@ function About() {
               </p>
             </Link>
           </div>
-        </div>
+        </div>*/}
       </div>
     </section>
   );

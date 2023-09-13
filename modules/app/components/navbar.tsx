@@ -79,7 +79,7 @@ function Navbar() {
 
       {isOpen && (
         <div
-          className="sm:hidden min-w-full h-full fixed bg-white shadow-md z-10 left-0 top-0"
+          className="sm:hidden min-w-full h-full fixed bg-white shadow-md z-20 left-0 top-0"
           id="mobile-menu"
         >
           <button className="absolute top-6 right-8 p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">

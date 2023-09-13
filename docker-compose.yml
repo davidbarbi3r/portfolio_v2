@@ -17,7 +17,7 @@ services:
   next-app:
     container_name: next-app
     build:
-      context: ./portfolio_v2
+      context: ./
       dockerfile: Dockerfile
       args:
         ENV_VARIABLE: ${ENV_VARIABLE}
@@ -34,4 +34,3 @@ services:
 # with each other, by using their container name as a hostname
 networks:
   my_network:
-    external: true
