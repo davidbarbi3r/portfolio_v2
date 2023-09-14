@@ -8,6 +8,7 @@ import { getAllPosts } from "../lib/postApi";
 import Project from "../modules/markdown_comp/projects/interfaces/project";
 import PostType from "../modules/markdown_comp/blog/interfaces/post";
 import { Client } from "@notionhq/client"
+import Services from "../modules/app/components/services";
 
 type Props = {
   allProjects: Project[];
@@ -26,6 +27,7 @@ function index({ allProjects, allPosts }: Props) {
         </Head>
         <Hero />
         <About />
+        <Services />
         <LastOnes lastPost={allPosts[0]} lastProject={allProjects[0]} />
       </Layout>
     </>
